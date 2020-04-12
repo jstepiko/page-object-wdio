@@ -1,4 +1,4 @@
-import AppPage from '../../_page/AppPage';
+import BasePage from './Base.page';
 
 class LoginPage extends AppPage {
     get emailInput() {
