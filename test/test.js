@@ -1,16 +1,21 @@
-import { assert } from 'chai';
+import {expect}  from 'chai';
+import LoginPage from '../_page/LoginPage';
+import {student} from  '../_data/user.data';
+import Notification from '../../_page/Notification';
+import {H1LoginPage} from "../_data/login.data";
 
-describe('Client', function () { //define suite title by passing a string
-
-    describe('Page Level', function () { //define sub-suite title by passing a string
-
-        it('Get title', function () { //define test title by passing a string
-            browser.url('/'); //open baseUrl + string passed in .url() function
-            let title = browser.getTitle(); //get page title and assign it to the "title" variable
-            browser.pause(2000); //just pause to visually see that something is happening on the page
-            assert.equal(title, 'Bug Tracker'); //compare {title} (actual) and "Bug Tracker" (expected)
-        })
+describe('LOGIN PAGE --POSITIVE', () => {
+    before(() => {
+        LoginPage.open();
 
     });
 
+    it('button `Submit` should be disabled by default', () => {
+        expect(LoginPage.submitBtn.isEnabled()).false;
+    });
+
+    it('should login user us student and get successful notification', () => {
+        LoginPage.login(student);
+        Notification.successMsgDisplayed();
+    });
 });
