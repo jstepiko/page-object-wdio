@@ -1,8 +1,6 @@
 import BasePage from './Base.page';
 
-class LoginPage extends AppPage {
-    get emailInput() {
-        return $('//input[@name="email"]');
+class LoginPage extends BasePage {
     }
     get emailInput() {
         return this.getElement('//input[@name="email"]');
