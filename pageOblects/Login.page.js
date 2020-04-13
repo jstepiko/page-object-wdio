@@ -35,8 +35,8 @@ class LoginPage extends BasePage {
         browser.pause(2000);
     }
 
-    open() {
-        super.open('https://stage.pasv.us/user/login');
+    open(path) {
+        browser.url(`${path}`);
     }
 
     expectedElements() {
