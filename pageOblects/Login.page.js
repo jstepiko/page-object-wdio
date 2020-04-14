@@ -22,15 +22,12 @@ class LoginPage extends BasePage {
         return this.getElements('.btn')[0];
     }
 
-    expectedElements() {
-        return {
-            this.emailInput,
-            this.passwordInput,
-            this.loginButton,
-            this.forgotPasswordLink,
-            this.registerLink
-        }
+    logInAs(email, password) {
+        this.emailInput.setValue(email);
+        this.passwordInput.setValue(password);
+        this.loginButton.click();
     }
+
 }
 
 export default new LoginPage();

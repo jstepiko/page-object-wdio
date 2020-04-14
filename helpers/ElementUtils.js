@@ -7,7 +7,7 @@ export default class ElementUtils {
     getElements(testId) {
         return browser.$$('testId');
     }
-/*
+
     elementsAreLoaded(elements, timeout = 10000) {
         browser.waitUntil(() => {
             return this.getMissingElements(elements).length === 0;
@@ -21,5 +21,5 @@ export default class ElementUtils {
         return elements
             .filter((element) => !element.isVisible())
             .map((element) => element.selector);
-    }*/
+    }
 }
