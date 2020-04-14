@@ -3,14 +3,16 @@ import LoginPage from '../_page/LoginPage';
 import {student} from  '../_data/user.data';
 
 
-describe('LOGIN PAGE --POSITIVE', () => {
+describe('Common End to End Login', () => {
     before(() => {
-        LoginPage.open();
+        LoginPage.open("https://stage.pasv.us/user/login");
 
+        LoginPage.elementsAreLoaded(LoginPage.emailInput);
     });
 
-    it('button `Submit` should be disabled by default', () => {
-        expect(LoginPage.submitBtn.isEnabled()).false;
+    it('Successfully login with a valid email and password', () => {
+        LoginPage.logInAs(email, password);
+        expect(MainPage.element.isExisting()).toBeTruthy();
     });
 
     it('should login user us student and get successful notification', () => {
