@@ -22,4 +22,11 @@ export default class ElementUtils {
             .filter((element) => !element.isVisible())
             .map((element) => element.selector);
     }
+
+    successMsgDisplayed(timeout = 5000) {
+        browser.waitUntil(() => {
+            $('.notification-success').isDisplayed();
+            }, timeout, 'Wrong / no notification displayed');
+        return true;
+    }
 }
