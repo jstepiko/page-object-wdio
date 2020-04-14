@@ -1,4 +1,4 @@
-import {expect}  from 'chai';
+import { expect } from 'chai';
 import LoginPage from '../pageOblects/Login.page';
 //import MainPage from '../pageOblects/Main.page'
 

@@ -24,6 +24,7 @@
     "@babel/register": "^7.9.0",
     "@wdio/cli": "^6.0.15",
     "chai": "^4.2.0",
+    "mocha": "^7.1.1",
     "webdriverio": "^6.0.15"
   },
   "devDependencies": {
