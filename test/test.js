@@ -1,7 +1,6 @@
 import {expect}  from 'chai';
-import LoginPage from '../_page/LoginPage';
-import {student} from  '../_data/user.data';
-
+import LoginPage from '../pageOblects/Login.page';
+//import MainPage from '../pageOblects/Main.page'
 
 describe('Common End to End Login', () => {
     before(() => {
@@ -11,12 +10,8 @@ describe('Common End to End Login', () => {
     });
 
     it('Successfully login with a valid email and password', () => {
-        LoginPage.logInAs(email, password);
-        expect(MainPage.element.isExisting()).toBeTruthy();
-    });
-
-    it('should login user us student and get successful notification', () => {
-        LoginPage.login(student);
-        Notification.successMsgDisplayed();
+        LoginPage.logInAs('admin@pasv.com', 'admin');
+        //expect(MainPage.courcesLink.isExisting()).toBeTruthy();
+        expect(LoginPage.successMsgDisplayed()).true;
     });
 });
