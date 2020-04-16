@@ -3,11 +3,11 @@ import BasePage from './Base.page';
 class LoginPage extends BasePage {
 
     get emailInput() {
-        return this.getElement('input[name="email"]');
+        return this.getElement('//input[@name="email"]');
     }
 
     get passwordInput() {
-        return this.getElement('input[name="password"]');
+        return this.getElement('//input[@name="password"]');
     }
 
     get loginButton() {
